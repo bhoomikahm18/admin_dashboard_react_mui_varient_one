@@ -1,7 +1,16 @@
 import React from 'react'
+import Sidenav from '../Sidenav'
+import { Box, Typography } from '@mui/material'
 
 export default function About() {
-  return (
-    <div>About</div>
-  )
+    return (
+        <>
+            <Box sx={{ display: "flex" }}>
+                <Sidenav />
+                <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+                    <h1>About</h1>
+                </Box>
+            </Box>
+        </>
+    )
 }
