@@ -1,10 +1,11 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Sidenav from './Sidenav';
 
 function App() {
   return (
     <>
-      Hello World
+      <Sidenav />
     </>
   );
 }
