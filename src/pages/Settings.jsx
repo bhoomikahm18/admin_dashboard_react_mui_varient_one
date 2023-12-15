@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 import React from 'react'
-import Sidenav from '../Sidenav'
+import Sidenav from '../components/Sidenav'
 
 export default function Settings() {
     return (

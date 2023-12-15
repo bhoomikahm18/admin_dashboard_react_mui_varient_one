@@ -1,7 +1,7 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Sidenav from './Sidenav';
+// import Sidenav from './components/Sidenav';
 import Home from './pages/Home';
 import About from './pages/About';
 import Settings from './pages/Settings';

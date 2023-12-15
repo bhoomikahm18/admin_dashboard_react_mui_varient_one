@@ -1,6 +1,6 @@
 import React from 'react'
-import Sidenav from '../Sidenav'
-import { Box, Typography } from '@mui/material'
+import Sidenav from '../components/Sidenav'
+import { Box } from '@mui/material'
 
 export default function About() {
     return (
