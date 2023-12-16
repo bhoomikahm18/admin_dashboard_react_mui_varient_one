@@ -20,22 +20,14 @@ export default function Home() {
                                 <Card sx={{ maxWidth: 49 + "%", height: 140 }}>
                                     <CardContent>
                                         <Typography gutterBottom variant="h5" component="div">
-                                            Lizard
-                                        </Typography>
-                                        <Typography variant="body2" color="text.secondary">
-                                            Lizards are a widespread group of squamate reptiles, with over 6,000
-                                            species, ranging across all continents except Antarctica
+                                            $500.00
                                         </Typography>
                                     </CardContent>
                                 </Card>
                                 <Card sx={{ maxWidth: 49 + "%", height: 140 }}>
                                     <CardContent>
                                         <Typography gutterBottom variant="h5" component="div">
-                                            Lizard
-                                        </Typography>
-                                        <Typography variant="body2" color="text.secondary">
-                                            Lizards are a widespread group of squamate reptiles, with over 6,000
-                                            species, ranging across all continents except Antarctica
+                                            $900.00
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -44,21 +36,28 @@ export default function Home() {
                         <Grid item xs={4}>
                             <Stack spacing={2} >
                                 <Card sx={{ maxWidth: 345 }}>
-                                    <CardContent >
                                         <Stack spacing={2} direction={"row"} >
-                                            <StorefrontIcon />
+                                            <div className='iconstyle'>
+                                                <StorefrontIcon />
+                                            </div>
                                             <div className='paddingall'>
                                                 <span className='pricetitle'>$203k</span>
                                                 <br />
                                                 <span className='pricesubtitle'> Total Income</span>
                                             </div>
                                         </Stack>
-                                    </CardContent>
                                 </Card>
                                 <Card sx={{ maxWidth: 345 }}>
-                                    <CardContent>
-
-                                    </CardContent>
+                                        <Stack spacing={2} direction={"row"} >
+                                            <div className='iconstyle'>
+                                                <StorefrontIcon />
+                                            </div>
+                                            <div className='paddingall'>
+                                                <span className='pricetitle'>$203k</span>
+                                                <br />
+                                                <span className='pricesubtitle'> Total Income</span>
+                                            </div>
+                                        </Stack>
                                 </Card>
                             </Stack>
                         </Grid>
