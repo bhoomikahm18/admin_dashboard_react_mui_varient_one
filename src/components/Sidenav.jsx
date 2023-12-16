@@ -75,12 +75,13 @@ export default function Sidenav() {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
+            <Box height={30} />
             <Drawer variant="permanent" open={open}>
-                {/* <DrawerHeader>
-                    <IconButton onClick={() => setOpen(!open)}>
+                <DrawerHeader>
+                    <IconButton>
                         {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
                     </IconButton>
-                </DrawerHeader> */}
+                </DrawerHeader>
                 <Divider />
                 <List>
                     <ListItem disablePadding sx={{ display: 'block' }} onClick={() => { navigate("/") }}>
