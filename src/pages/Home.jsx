@@ -8,6 +8,7 @@ import StorefrontIcon from '@mui/icons-material/Storefront';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import AccordionDash from '../components/AccordionDash.jsx';
+import BarChart from '../charts/BarChart.jsx';
 
 export default function Home() {
     return (
@@ -83,7 +84,7 @@ export default function Home() {
                             <Grid item xs={8}>
                                 <Card sx={{ height: 60 + "vh" }}>
                                     <CardContent>
-
+                                        <BarChart />
                                     </CardContent>
                                 </Card>
                             </Grid>
