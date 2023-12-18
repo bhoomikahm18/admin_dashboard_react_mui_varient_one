@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar.jsx';
 import Grid from '@mui/material/Grid';
 import '../Dash.css';
 import GeoChart from '../charts/GeoChart.jsx';
+import PiChart from '../charts/PiChart.jsx';
 
 export default function Analytics() {
     return (
@@ -94,7 +95,7 @@ export default function Analytics() {
                             <Grid item xs={4}>
                                 <Card sx={{ height: 40 + "vh" }}>
                                     <CardContent>
-
+                                        <PiChart />
                                     </CardContent>
                                 </Card>
                             </Grid>
