@@ -7,6 +7,7 @@ import '../Dash.css';
 import GeoChart from '../charts/GeoChart.jsx';
 import PiChart from '../charts/PiChart.jsx';
 import HbarChart from '../charts/HbarChart.jsx';
+import CountUp from 'react-countup';
 
 export default function Analytics() {
     return (
@@ -27,7 +28,7 @@ export default function Analytics() {
                                                     Visitors
                                                 </Typography>
                                                 <Typography gutterBottom variant="h5" component="div" sx={{ color: "#f0fcfc" }}>
-                                                    24,630
+                                                    <CountUp delay={0.2} end={22000} duration={0.3} />
                                                 </Typography>
                                                 <Typography gutterBottom variant="body2" color="text.secondary" sx={{ color: "#ccd1d1" }}>
                                                     Since Last week
@@ -40,7 +41,7 @@ export default function Analytics() {
                                                     Visitors
                                                 </Typography>
                                                 <Typography gutterBottom variant="h5" component="div" sx={{ color: "#f0fcfc" }}>
-                                                    24,630
+                                                    <CountUp delay={0.4} end={32000} duration={0.6} />
                                                 </Typography>
                                                 <Typography gutterBottom variant="body2" color="text.secondary" sx={{ color: "#ccd1d1" }}>
                                                     Since Last week
@@ -55,7 +56,7 @@ export default function Analytics() {
                                                     Visitors
                                                 </Typography>
                                                 <Typography gutterBottom variant="h5" component="div" sx={{ color: "#f0fcfc" }}>
-                                                    24,630
+                                                    <CountUp delay={0.4} end={12000} duration={0.6} />
                                                 </Typography>
                                                 <Typography gutterBottom variant="body2" color="text.secondary" sx={{ color: "#ccd1d1" }}>
                                                     Since Last week
@@ -68,7 +69,7 @@ export default function Analytics() {
                                                     Visitors
                                                 </Typography>
                                                 <Typography gutterBottom variant="h5" component="div" sx={{ color: "#f0fcfc" }}>
-                                                    24,630
+                                                    <CountUp delay={0.3} end={22500} duration={0.5} />
                                                 </Typography>
                                                 <Typography gutterBottom variant="body2" color="text.secondary" sx={{ color: "#ccd1d1" }}>
                                                     Since Last week

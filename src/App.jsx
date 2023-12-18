@@ -5,7 +5,7 @@ import './App.css';
 import Home from './pages/Home';
 import About from './pages/About';
 import Settings from './pages/Settings';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import Analytics from './pages/Analytics';
 
 function App() {

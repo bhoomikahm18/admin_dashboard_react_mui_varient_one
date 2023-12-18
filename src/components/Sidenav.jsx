@@ -145,7 +145,7 @@ export default function Sidenav() {
                             >
                                 <AnalyticsIcon />
                             </ListItemIcon>
-                            <ListItemText primary="About" sx={{ opacity: open ? 1 : 0 }} />
+                            <ListItemText primary="Analytics" sx={{ opacity: open ? 1 : 0 }} />
                         </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding sx={{ display: 'block' }} onClick={() => { navigate("/settings") }}>
@@ -165,7 +165,7 @@ export default function Sidenav() {
                             >
                                 <SettingsIcon />
                             </ListItemIcon>
-                            <ListItemText primary="Sttings" sx={{ opacity: open ? 1 : 0 }} />
+                            <ListItemText primary="Settings" sx={{ opacity: open ? 1 : 0 }} />
                         </ListItemButton>
                     </ListItem>
                 </List>
