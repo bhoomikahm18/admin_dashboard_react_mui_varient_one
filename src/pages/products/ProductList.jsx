@@ -8,11 +8,39 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import { Typography } from '@mui/material';
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import { db } from "../../firebase-config.jsx";
+import {
+    collection,
+    getDocs,
+    addDoc,
+    updateDoc,
+    deleteDoc,
+    doc,
+} from "firebase/firestore";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+import Swal from "sweetalert2";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
 
 export default function ProductList() {
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
     const [rows, setRows] = useState([]);
+    const empCollectionRef = collection(db, "products");
+
+    useEffect(() => {
+        getUsers();
+    }, []);
+
+    const getUsers = async () => {
+        const data = await getDocs(empCollectionRef);
+        setRows(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -37,13 +65,36 @@ export default function ProductList() {
                 <Table stickyHeader aria-label="sticky table">
                     <TableHead>
                         <TableRow>
-                                <TableCell
-                                    key={column.id}
-                                    align={column.align}
-                                    style={{ minWidth: column.minWidth }}
-                                >
-                                    {column.label}
-                                </TableCell>
+                            <TableCell
+                                align={"left"}
+                                style={{ minWidth: "100px" }}
+                            >
+                                Name
+                            </TableCell>
+                            <TableCell
+                                align={"left"}
+                                style={{ minWidth: "100px" }}
+                            >
+                                Price
+                            </TableCell>
+                            <TableCell
+                                align={"left"}
+                                style={{ minWidth: "100px" }}
+                            >
+                                Category
+                            </TableCell>
+                            <TableCell
+                                align={"left"}
+                                style={{ minWidth: "100px" }}
+                            >
+                                Date
+                            </TableCell>
+                            <TableCell
+                                align={"left"}
+                                style={{ minWidth: "100px" }}
+                            >
+                                Action
+                            </TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -51,17 +102,19 @@ export default function ProductList() {
                             .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                             .map((row) => {
                                 return (
-                                    <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                                        {columns.map((column) => {
-                                            const value = row[column.id];
-                                            return (
-                                                <TableCell key={column.id} align={column.align}>
-                                                    {column.format && typeof value === 'number'
-                                                        ? column.format(value)
-                                                        : value}
-                                                </TableCell>
-                                            );
-                                        })}
+                                    <TableRow hover role="checkbox" tabIndex={-1} >
+                                        <TableCell key={row.id} align={"left"}>
+                                            {row.name}
+                                        </TableCell>
+                                        <TableCell key={row.id} align={"left"}>
+                                            {row.price}
+                                        </TableCell>
+                                        <TableCell key={row.id} align={"left"}>
+                                            {row.category}
+                                        </TableCell>
+                                        <TableCell key={row.id} align={"left"}>
+                                            {row.date}
+                                        </TableCell>
                                     </TableRow>
                                 );
                             })}
