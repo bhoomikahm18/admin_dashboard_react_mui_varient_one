@@ -22,6 +22,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import Modal from '@mui/material/Modal';
 import AddProduct from './AddProduct.jsx';
 import { useAppStore } from '../../appStore.jsx';
+import EditProduct from './EditProduct.jsx';
 
 const style = {
     position: 'absolute',
@@ -41,8 +42,12 @@ export default function ProductList() {
     // const [rows, setRows] = useState([]);
     const empCollectionRef = collection(db, "products");
     const [open, setOpen] = useState(false);
+    const [editopen, setEditOpen] = useState(false);
+    const [formid, setFormid] = useState("");
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const handleEditOpen = () => setEditOpen(true);
+    const handleEditClose = () => setEditOpen(false);
     const setRows = useAppStore((state) => state.setRows)
     const rows = useAppStore((state) => state.rows)
 
@@ -97,6 +102,17 @@ export default function ProductList() {
         }
     };
 
+    const editData = (id, name, price, category) => {
+        const data = {
+            id: id,
+            name: name,
+            price: price,
+            category: category,
+        }
+        setFormid(data);
+        handleEditOpen();
+    }
+
     return (
         <>
             <div>
@@ -107,7 +123,17 @@ export default function ProductList() {
                     aria-describedby="modal-modal-description"
                 >
                     <Box sx={style}>
-                        <AddProduct closeEvent={handleClose} />
+                        <EditProduct closeEvent={handleClose} />
+                    </Box>
+                </Modal>
+                <Modal
+                    open={editopen}
+                    /* onClose={handleClose}*/
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <Box sx={style}>
+                        <EditProduct closeEvent={handleEditClose} fid={formid}/>
                     </Box>
                 </Modal>
             </div>
@@ -207,7 +233,7 @@ export default function ProductList() {
                                                             cursor: "pointer",
                                                         }}
                                                         className="cursor-pointer"
-                                                    // onClick={() => editUser(row.id)}
+                                                        onClick={() => editData(row.id, row.name, row.price, row.category)}
                                                     />
                                                     <DeleteIcon
                                                         style={{
