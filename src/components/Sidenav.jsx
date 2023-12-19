@@ -14,7 +14,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 // import InboxIcon from '@mui/icons-material/MoveToInbox';
 import HomeIcon from '@mui/icons-material/Home';
-import GroupIcon from '@mui/icons-material/Group';
+// import GroupIcon from '@mui/icons-material/Group';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import { useNavigate } from 'react-router-dom';
@@ -108,7 +109,7 @@ export default function Sidenav() {
                             <ListItemText primary="Home" sx={{ opacity: open ? 1 : 0 }} />
                         </ListItemButton>
                     </ListItem>
-                    <ListItem disablePadding sx={{ display: 'block' }} onClick={() => { navigate("/about") }}>
+                    <ListItem disablePadding sx={{ display: 'block' }} onClick={() => { navigate("/products") }}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
@@ -123,9 +124,9 @@ export default function Sidenav() {
                                     justifyContent: 'center',
                                 }}
                             >
-                                <GroupIcon />
+                                <ShoppingCartIcon />
                             </ListItemIcon>
-                            <ListItemText primary="About" sx={{ opacity: open ? 1 : 0 }} />
+                            <ListItemText primary="Products" sx={{ opacity: open ? 1 : 0 }} />
                         </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding sx={{ display: 'block' }} onClick={() => { navigate("/analytics") }}>
